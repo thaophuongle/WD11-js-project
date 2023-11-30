@@ -46,27 +46,27 @@ const muffin = new Product("6", "muffin", 5, "./assets/images/muffins.webp");
 const productList = [bagel, croissant, coffee, latte, dougnuts, muffin];
 
 document.querySelector("#name1").innerHTML = bagel.name;
-document.querySelector("#price1").innerHTML = bagel.price;
+document.querySelector("#price1").innerHTML = `$${bagel.price}`;
 document.querySelector("#productImg1").src = bagel.img;
 
 document.querySelector("#name2").innerHTML = croissant.name;
-document.querySelector("#price2").innerHTML = croissant.price;
+document.querySelector("#price2").innerHTML = `$${croissant.price}`;
 document.querySelector("#productImg2").src = croissant.img;
 
 document.querySelector("#name3").innerHTML = coffee.name;
-document.querySelector("#price3").innerHTML = coffee.price;
+document.querySelector("#price3").innerHTML = `$${coffee.price}`;
 document.querySelector("#productImg3").src = coffee.img;
 
 document.querySelector("#name4").innerHTML = latte.name;
-document.querySelector("#price4").innerHTML = latte.price;
+document.querySelector("#price4").innerHTML = `$${latte.price}`;
 document.querySelector("#productImg4").src = latte.img;
 
 document.querySelector("#name5").innerHTML = dougnuts.name;
-document.querySelector("#price5").innerHTML = dougnuts.price;
+document.querySelector("#price5").innerHTML = `$${dougnuts.price}`;
 document.querySelector("#productImg5").src = dougnuts.img;
 
 document.querySelector("#name6").innerHTML = muffin.name;
-document.querySelector("#price6").innerHTML = muffin.price;
+document.querySelector("#price6").innerHTML = `$${muffin.price}`;
 document.querySelector("#productImg6").src = muffin.img;
 
 let cart = [];
