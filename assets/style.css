@@ -38,11 +38,11 @@ header{
     background-color: blue;
     border-radius: 50%;
 } */
-header img{
-    /* width:10px;
+/*header img{
+    width:10px;
     height:10px;
-    max-width: 10px; */
-}
+    max-width: 10px; 
+}*/
 header nav{
     display: flex;
 }
@@ -78,6 +78,7 @@ header nav{
     align-content: center;
     flex-wrap: wrap;
     justify-content: center;
+    text-align: center;
 }
 
 .about_text h1{
@@ -271,12 +272,13 @@ margin-bottom: 10px;
     cursor: pointer;
    }
 
-   .checkout{
+   /* .checkout{
     
    }
-   /* .checkout:hover{
+   .checkout:hover{
     background-color: var(--lightRoast);
    } */
+
    .total{
     width: 100%;
     display: flex;
@@ -292,8 +294,9 @@ margin-bottom: 10px;
     font-size: 14px;
     line-height: 10px;
    }
-   .total-cost{
-   }
+
+  /* .total-cost{
+  } */
 
 
    .checkout_btn{

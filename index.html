@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>E-cafe</title>
+    <title>Bee-cafe</title>
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -49,8 +49,11 @@
           <img src="./assets/images/banner.jpg" alt="banner image">
         </div>
         <div class="about_text">
-        <h1>Welcome To E-Cafe</h1>
-        <p>We are a certified organic autonomous hivemind of bees that cook fresh cafe meals and deliver then straight to your door</p>
+        <h1>Welcome To Bee Cafe</h1>
+        <h3 id="timeHeading">It is currently:</h3>
+        <p id="currentDateTime"></p>
+        <p id="coffeeTagline"><b>Perhaps you should get some coffee...</b></p>
+        <p>We are a certified organic autonomous hivemind of bees that cook fresh cafe meals and deliver them straight to your door</p>
         </div>
       </div>
       
@@ -62,17 +65,18 @@
         <div class="shopItem" id="shopItem1">
           <div class="shopItem__img">
             <img
+            id="productImg1"
+            src=""
               class="productImg"
-              src="./assets/images/bagels.webp"
               alt="image of bagel for shop"
             />
           </div>
           <div class="shopItem__content">
-            <h3>Bagel</h3>
-            <p>$12</p>
+            <h3 id="name1"></h3>
+            <p id="price1"></p>
           </div>
           <div class="shopItem__button">
-            <button class="cartBtn" type="button">
+            <button onclick="addTocart(1)" class="cartBtn" type="button">
               <i class="fa-solid fa-cart-shopping"></i> Add To Cart
             </button>
           </div>
@@ -81,17 +85,18 @@
         <div class="shopItem" id="shopItem1">
           <div class="shopItem__img">
             <img
+            id="productImg2"
               class="productImg"
-              src="./assets/images/Croissant.webp"
+              src=""
               alt="image of bagel for shop"
             />
           </div>
           <div class="shopItem__content">
-            <h3>croissant</h3>
-            <p>$6</p>
+            <h3 id="name2"></h3>
+            <p id="price2"></p>
           </div>
           <div class="shopItem__button">
-            <button class="cartBtn" type="button">
+            <button onclick="addTocart(2)" class="cartBtn" type="button">
               <i class="fa-solid fa-cart-shopping"></i> Add To Cart
             </button>
           </div>
@@ -100,17 +105,18 @@
         <div class="shopItem" id="shopItem2">
           <div class="shopItem__img">
             <img
+            id="productImg3"
               class="productImg"
-              src="./assets/images/coffee.webp"
+              src=""
               alt="image of coffee for shop"
             />
           </div>
           <div class="shopItem__content">
-            <h3>Coffee</h3>
-            <p>$5</p>
+            <h3 id="name3"></h3>
+            <p id="price3"></p>
           </div>
           <div class="shopItem__button">
-            <button class="cartBtn" type="button">
+            <button onclick="addTocart(3)" class="cartBtn" type="button">
               <i class="fa-solid fa-cart-shopping"></i> Add To Cart
             </button>
           </div>
@@ -118,17 +124,18 @@
         <div class="shopItem" id="shopItem3">
           <div class="shopItem__img">
             <img
+              id="productImg4"
               class="productImg"
-              src="./assets/images/latte.jpeg"
+              src=""
               alt="image of iced latte for shop"
             />
           </div>
           <div class="shopItem__content">
-            <h3>Iced Latte</h3>
-            <p>$7</p>
+            <h3 id="name4"></h3>
+            <p id="price4"></p>
           </div>
           <div class="shopItem__button">
-            <button class="cartBtn" type="button">
+            <button onclick="addTocart(4)" class="cartBtn" type="button">
               <i class="fa-solid fa-cart-shopping"></i> Add To Cart
             </button>
           </div>
@@ -136,17 +143,18 @@
         <div class="shopItem" id="shopItem4">
           <div class="shopItem__img">
             <img
+            id="productImg5"
               class="productImg"
-              src="./assets/images/Dougnuts-AB.jpg"
+              src=""
               alt="image of doughnuts for shop"
             />
           </div>
           <div class="shopItem__content">
-            <h3>Dougnuts (3)</h3>
-            <p>$12</p>
+            <h3 id="name5"></h3>
+            <p id="price5"></p>
           </div>
           <div class="shopItem__button">
-            <button class="cartBtn" type="button">
+            <button onclick="addTocart(5)" class="cartBtn" type="button">
               <i class="fa-solid fa-cart-shopping"></i> Add To Cart
             </button>
           </div>
@@ -154,17 +162,18 @@
         <div class="shopItem" id="shopItem5">
           <div class="shopItem__img">
             <img
+            id="productImg6"
               class="productImg"
-              src="./assets/images/muffins.webp"
+              src=""
               alt="image of muffins for shop"
             />
           </div>
           <div class="shopItem__content">
-            <h3>Muffin</h3>
-            <p>$5</p>
+            <h3 id="name6"></h3>
+            <p id="price6"></p>
           </div>
           <div class="shopItem__button">
-            <button class="cartBtn" type="button">
+            <button onclick="addTocart(6)" class="cartBtn" type="button">
               <i class="fa-solid fa-cart-shopping"></i> Add To Cart
             </button>
           </div>
@@ -173,15 +182,14 @@
       <!--Shopping cart-->
   <div class="cart" id="cart">
         <h3 class="cart_heading">Shopping Cart</h3>
-        <div class="cartitems">
-          <div class="cartitem">
+        <div id="cartitems" class="cartitems">
+          <!-- <div class="cartitem">
             <div class="cart_image">
               <img src="./assets/images/coffee.webp" alt="" />
             </div>
 
             <div class="carttext">
               <h2 class="carttext_h2">Coffee</h2>
-              <h3 class="carttext_h3">Medium</h3>
             </div>
 
             <div class="item_count">
@@ -194,16 +202,15 @@
               <div class="price">$4.99</div>
               <div class="remove_btn">Remove</div>
             </div>
-          </div>
+          </div> -->
 
-          <div class="cartitem">
+          <!-- <div class="cartitem">
             <div class="cart_image">
               <img src="./assets/images/muffins.webp" alt="" />
             </div>
 
             <div class="carttext">
               <h2 class="carttext_h2">Muffin</h2>
-              <h3 class="carttext_h3">Regular</h3>
             </div>
 
             <div class="item_count">
@@ -216,16 +223,15 @@
               <div class="price">$5.99</div>
               <div class="remove_btn">Remove</div>
             </div>
-          </div>
+          </div> -->
 
-          <div class="cartitem">
+          <!-- <div class="cartitem">
             <div class="cart_image">
               <img src="./assets/images/Croissant.webp" alt="" />
             </div>
 
             <div class="carttext">
               <h2 class="carttext_h2">Croissant</h2>
-              <h3 class="carttext_h3">Regular</h3>
             </div>
 
             <div class="item_count">
@@ -238,19 +244,19 @@
               <div class="price">$3.99</div>
               <div class="remove_btn">Remove</div>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <div class="checkout">
           <div class="total">
             <div>
               <div class="Subtotal">Sub-Total</div>
-              <div class="items">2 items</div>
+              <div class="items" id="subtotal">0 item</div>
             </div>
-            <div class="total-cost">$14.97</div>
+            <div id="totalPrice" class="total-cost">$0.00</div>
           </div>
           <div class="checkout_btn">
-          <button class="btn">Checkout</button>
+          <button class="btn" onclick="clearLocal()">Checkout</button>
           </div>
           </div>
      
@@ -258,10 +264,12 @@
     </main>
 
     <footer>
-      <!--copyright logos anf back to top link-->
+      <!--copyright logos and back to top link-->
       <div class="footLogo"></div>
       <p id="copyrightText">copyright @ Our Awesome Coffee Shop</p>
       <nav><a class="backToTop" href="#header"><i class="fa-solid fa-arrow-up"></i> Back To Top</a></nav>
     </footer>
+
+    <script src="./script.js"></script>
   </body>
 </html>
