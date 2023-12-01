@@ -1,4 +1,4 @@
-<p>This is our project for online store</p>
+<h1>This is our project for online store</h1>
 <p>Created By Phuong, Lorraine, Edward and Heena</p>
 <br>
 <h4>Live page link</h4></br>
