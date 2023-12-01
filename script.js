@@ -97,6 +97,7 @@ const calculateSubTotalPrice = (cart) => {
   return subTotalPrice;
 };
 
+//render the cart after click on "add to cart" button
 const renderCart = (cart) => {
   let content = "";
   cart.forEach((cartItem) => {
@@ -123,8 +124,7 @@ const renderCart = (cart) => {
   });
   document.querySelector("#cartitems").innerHTML = content;
 };
-//onclick="increaseQuantity('${id}')
-//onclick="decreaseQuantity('${id}')
+
 const addTocart = (productId) => {
   const product = productList.find((p) => p.id == productId);
 
@@ -160,7 +160,7 @@ const addTocart = (productId) => {
     "$" + calculateSubTotalPrice(cart).toLocaleString();
 };
 
-//remove item in the cart
+//REMOVE item in the cart
 const removeItem = (productId) => {
   // Find the index of the item in the cart array based on the product ID
   const indexToRemove = cart.findIndex((item) => item.product.id === productId);
@@ -215,6 +215,7 @@ const increaseQuantity = (id) => {
   localStorage.setItem("cart", JSON.stringify(cart));
 };
 
+//Decrease the quantity of the item in the cart
 const decreaseQuantity = (id) => {
   let cartItem = findItemById(cart, id);
   if (cartItem) cartItem.quantity--;
@@ -236,4 +237,30 @@ const decreaseQuantity = (id) => {
   // Render the updated cart
   renderCart(cart);
   localStorage.setItem("cart", JSON.stringify(cart));
+};
+
+//render saved cart in local storage when the browser reloads
+window.onload = async () => {
+  cart = localStorage.getItem("cart")
+    ? JSON.parse(localStorage.getItem("cart"))
+    : [];
+  renderCart(cart);
+};
+
+//clear the cart
+const clearCart = () => {
+  cart = [];
+  renderCart(cart);
+  localStorage.setItem("cart", JSON.stringify(cart));
+};
+
+//clear the cart when checkout button is clicked
+const clearLocal = () => {
+  if (cart.length > 0) {
+    alert("Payment is successful!");
+    clearCart();
+    localStorage.setItem("cart", JSON.stringify(cart));
+  } else {
+    alert("Cart is empty!");
+  }
 };
